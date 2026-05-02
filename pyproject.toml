@@ -1,0 +1,39 @@
+[project]
+name = "haichizu"
+version = "0.1.0"
+description = "AI-assisted 配置図 generator for 車庫証明 applications"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+    "pydantic>=2.0",
+    "svgwrite>=1.4",
+    "pillow>=10.0",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+    "typer>=0.12",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-mock>=3.12",
+    "ruff>=0.5",
+]
+pdf = [
+    "cairosvg>=2.7",
+]
+
+[project.scripts]
+haichizu = "haichizu.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
