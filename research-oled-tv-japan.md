@@ -34,18 +34,18 @@ Google TV 搭載モデルでは以下が可能（[Google公式ヘルプ](https:/
 
 ## 最安値ランキング TOP 10（条件適合モデル）
 
-| 順位 | モデル | サイズ | 発売年 | パネル | 最安価格(税込) | 評価 / 口コミ |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | **SHARP AQUOS OLED 4T-C77EQ1** | 77V | 2022 | WOLED | **¥289,800〜** | 価格.com クチコミ 125件・回転スタンド搭載 |
-| 2 | **SHARP AQUOS OLED 4T-C77GQ1** | 77V | 2024 | S-Bright WOLED + Medalist S5 | **¥349,800〜** | AI画質処理 / Dolby Atmos 対応 |
-| 3 | **TVS REGZA 77X9900M** | 77V | 2023 | 有機EL + レグザエンジンZRα | **¥398,000〜** | 価格.com 満足度 ★5.00・クチコミ 468件 |
-| 4 | **TVS REGZA 77X8900R** | 77V | 2025 | 高コントラスト有機EL | **¥448,000〜** | レグザAI快適リスニング搭載 |
-| 5 | **SONY BRAVIA XRJ-77A80L** | 77V | 2023 | WOLED + XR プロセッサー | **¥448,000〜 (¥449,800 が一般)** | 価格.com 満足度 ★5.00・クチコミ 321件 |
-| 6 | **SONY BRAVIA XRJ-77A80K** | 77V | 2022 | WOLED + XR プロセッサー | **¥518,000〜** | 在庫減少傾向。コスパ良好な型落ち |
-| 7 | **TVS REGZA 77X9900N** | 77V | 2024 | MLA有機EL（高輝度）+ ZRα | 65V 実勢価格から推定 **¥600,000前後** | 2024冬 HiVi 賞ディスプレイ部門入賞 |
-| 8 | **SONY BRAVIA 8 K-77XR80** | 77V | 2024 | XR OLED + XR プロセッサー | **¥695,000〜（XPRICE）／定価 ¥935,000** | Acoustic Surface Audio+ |
-| 9 | **SONY BRAVIA XRJ-77A95L** | 77V | 2024 | **QD-OLED** + XR | **¥800,000台** | ソニー最高峰の有機EL画質 |
-| 10 | **SONY BRAVIA XRJ-83A90J** | 83V | 2021 | WOLED + XR | **¥900,000台（型落ち相場）** | 大画面83V型・型落ち狙い目 |
+| 順位 | モデル | サイズ | 発売年 | パネル | 最安価格(税込) | 評価 / 口コミ | 商品ページ |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | **SHARP AQUOS OLED 4T-C77EQ1** | 77V | 2022 | WOLED | **¥289,800〜** | 価格.com クチコミ 125件・回転スタンド搭載 | [価格.com](https://kakaku.com/item/K0001441354/) ／ [Amazon](https://www.amazon.co.jp/%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97-4T-C77EQ1-%E3%83%81%E3%83%A5%E3%83%BC%E3%83%8A%E3%83%BC%E5%86%85%E8%94%B5-Google-2022%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B09ZYLFC8G) |
+| 2 | **SHARP AQUOS OLED 4T-C77GQ1** | 77V | 2024 | S-Bright WOLED + Medalist S5 | **¥349,800〜** | AI画質処理 / Dolby Atmos 対応 | [価格.com](https://kakaku.com/item/K0001626002/) ／ [ヤマダ](https://www.yamada-denkiweb.com/102610015/) |
+| 3 | **TVS REGZA 77X9900M** | 77V | 2023 | 有機EL + レグザエンジンZRα | **¥398,000〜** | 価格.com 満足度 ★5.00・クチコミ 468件 | [価格.com](https://kakaku.com/item/K0001527563/) ／ [ケーズデンキ](https://www.ksdenki.com/shop/g/g4580652112871/) ／ [Amazon](https://www.amazon.co.jp/REGZA-77X9900M-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%86%E3%83%AC%E3%83%93-Atmos%E5%AF%BE%E5%BF%9C-2023%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B0C1H8479M) |
+| 4 | **TVS REGZA 77X8900R** | 77V | 2025 | 高コントラスト有機EL | **¥448,000〜** | レグザAI快適リスニング搭載 | [価格.com クチコミ](https://bbs.kakaku.com/bbs/K0001695171/) |
+| 5 | **SONY BRAVIA XRJ-77A80L** | 77V | 2023 | WOLED + XR プロセッサー | **¥448,000〜 (¥449,800 が一般)** | 価格.com 満足度 ★5.00・クチコミ 321件 | [価格.com](https://kakaku.com/item/K0001528402/) ／ [ソニーストア](https://pur.store.sony.jp/bravia/products/A80L/XRJ-77A80L_purchase/) ／ [Amazon](https://www.amazon.co.jp/%E3%82%BD%E3%83%8B%E3%83%BC-%E3%83%96%E3%83%A9%E3%83%93%E3%82%A2XRJ-77A80L-%E3%82%BD%E3%83%8B%E3%83%BC%E3%83%BB%E3%83%94%E3%82%AF%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BA%E3%81%AE%E6%98%A0%E7%94%BB2%E5%B9%B4%E9%96%93%E8%A6%8B%E6%94%BE%E9%A1%8C%E4%BB%98%E3%81%8D-120fps%E5%AF%BE%E5%BF%9C-2023%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B0BZZV5YP1) ／ [ヤマダ](https://www.yamada-denkiweb.com/101982014/) |
+| 6 | **SONY BRAVIA XRJ-77A80K** | 77V | 2022 | WOLED + XR プロセッサー | **¥518,000〜** | 在庫減少傾向。コスパ良好な型落ち | [価格.com](https://kakaku.com/item/K0001448852/) ／ [Amazon](https://www.amazon.co.jp/%E3%82%BD%E3%83%8B%E3%83%BC-XRJ-77A80K-%E3%82%BD%E3%83%8B%E3%83%BC%E3%83%BB%E3%83%94%E3%82%AF%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BA%E3%81%AE%E6%98%A0%E7%94%BB2%E5%B9%B4%E9%96%93%E8%A6%8B%E6%94%BE%E9%A1%8C%E4%BB%98%E3%81%8D-120fps%E5%AF%BE%E5%BF%9C-2022%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B0B3TD6NQ9) |
+| 7 | **TVS REGZA 77X9900N** | 77V | 2024 | MLA有機EL（高輝度）+ ZRα | 65V 実勢価格から推定 **¥600,000前後** | 2024冬 HiVi 賞ディスプレイ部門入賞 | [REGZA公式](https://www.regza.com/tv/lineup/x9900n) ／ [価格.com X9900Nシリーズ](https://kakaku.com/kaden/lcd-tv/itemlist.aspx?pdf_subse=3896) |
+| 8 | **SONY BRAVIA 8 K-77XR80** | 77V | 2024 | XR OLED + XR プロセッサー | **¥695,000〜（XPRICE）／定価 ¥935,000** | Acoustic Surface Audio+ | [価格.com](https://kakaku.com/item/K0001638757/) ／ [ソニーストア](https://pur.store.sony.jp/bravia/products/K-XR80/K-77XR80_purchase/) ／ [ケーズデンキ](https://www.ksdenki.com/shop/g/g4548736159242/) ／ [Amazon](https://www.amazon.co.jp/%E3%82%BD%E3%83%8B%E3%83%BC-K-77XR80-120fps%E5%AF%BE%E5%BF%9C-10%E7%95%B3%E4%BB%A5%E4%B8%8A%E6%8E%A8%E5%A5%A8-2024%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B0D8S7XFRS) ／ [XPRICE](https://www.xprice.co.jp/d.php?id=300000153698301&status=1) |
+| 9 | **SONY BRAVIA XRJ-77A95L** | 77V | 2024 | **QD-OLED** + XR | **¥800,000台** | ソニー最高峰の有機EL画質 | [ソニー公式 A95L](https://www.sony.jp/bravia/special/XRJ-A95L/) |
+| 10 | **SONY BRAVIA XRJ-83A90J** | 83V | 2021 | WOLED + XR | **¥900,000台（型落ち相場）** | 大画面83V型・型落ち狙い目 | [価格.com](https://kakaku.com/item/K0001347759/) ／ [ソニー公式 A90J](https://www.sony.jp/bravia/products/XRJ-A90J/) ／ [Amazon](https://www.amazon.co.jp/%E3%82%BD%E3%83%8B%E3%83%BC-XRJ-83A90J-4K%E3%83%81%E3%83%A5%E3%83%BC%E3%83%8A%E3%83%BC-BRAVIA-2021%E5%B9%B4%E3%83%A2%E3%83%87%E3%83%AB/dp/B091P9SCVV) |
 
 > 価格は 価格.com / 主要量販店オンラインの 2026年春時点参考値。実勢価格は日々変動するため、購入前に最新値を必ず確認してください。
 
