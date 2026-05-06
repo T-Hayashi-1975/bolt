@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>理想の冷蔵庫を見つけるアンケート</title>
+<style>
+  :root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --primary: #2b7de9;
+    --primary-dark: #1e5fbf;
+    --accent: #00a89c;
+    --text: #1f2a44;
+    --muted: #6b7689;
+    --border: #e3e8f0;
+    --shadow: 0 4px 16px rgba(30, 50, 80, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
+      "Hiragino Sans", Meiryo, "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #eaf2fb 0%, #f4f7fb 100%);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px 16px 60px;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  header.hero {
+    text-align: center;
+    padding: 24px 8px 16px;
+  }
+
+  .hero .icon {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin: 0 0 8px;
+    color: var(--text);
+    letter-spacing: 0.02em;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 auto;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .question-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 22px;
+    margin: 18px 0;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .question-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(30, 50, 80, 0.10);
+  }
+
+  .q-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .q-number {
+    background: var(--primary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .q-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .q-body {
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 15px;
+    margin: 8px 0 6px;
+  }
+
+  .q-hint {
+    font-size: 13px;
+    color: var(--muted);
+    background: #f7f9fc;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin: 12px 0 18px;
+    line-height: 1.7;
+  }
+
+  .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .slider-wrap {
+    flex: 1 1 320px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .slider-wrap input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(
+      to right,
+      var(--primary) 0%,
+      var(--primary) var(--val, 0%),
+      #d8dee8 var(--val, 0%),
+      #d8dee8 100%
+    );
+    outline: none;
+  }
+
+  .slider-wrap input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(43, 125, 233, 0.4);
+    cursor: pointer;
+  }
+
+  .slider-wrap input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(43, 125, 233, 0.4);
+    cursor: pointer;
+  }
+
+  .score-display {
+    background: var(--primary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 15px;
+    min-width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    padding: 0 4px;
+  }
+
+  .actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(43, 125, 233, 0.3);
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+
+  button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(43, 125, 233, 0.4);
+  }
+
+  button.secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+
+  button.secondary:hover {
+    background: #eaf2fb;
+  }
+
+  .result {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-top: 22px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    display: none;
+  }
+
+  .result.visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result h2 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 20px;
+  }
+
+  .result-summary {
+    background: #f7f9fc;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    line-height: 1.8;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    border: 1px solid var(--border);
+  }
+
+  .copy-msg {
+    color: var(--accent);
+    font-size: 13px;
+    margin-left: 8px;
+    display: none;
+  }
+
+  .copy-msg.visible {
+    display: inline;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 32px;
+    padding: 0 16px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 22px; }
+    .question-card { padding: 20px 16px; }
+    .q-title { font-size: 15px; }
+    .q-body { font-size: 14px; }
+    button { padding: 12px 22px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <div class="icon">🧊</div>
+    <h1>理想の冷蔵庫アンケート</h1>
+    <p class="subtitle">
+      新しい冷蔵庫を選ぶための5つの質問です。<br />
+      気になる度合いを <strong>0〜10点</strong> で教えてください。
+    </p>
+  </header>
+
+  <main id="form">
+    <!-- Q1 -->
+    <section class="question-card">
+      <div class="q-header">
+        <div class="q-number">Q1</div>
+        <div class="q-title">生鮮食品の鮮度保持</div>
+      </div>
+      <div class="q-body">
+        肉や魚をまとめ買いすることが多く、<strong>冷凍せずに冷蔵（チルド・パーシャル）のまま長く、おいしく保存したい</strong>ですか？
+      </div>
+      <div class="q-hint">
+        💡 高得点の場合：日立の「まるごとチルド」や「真空氷温ルーム」、東芝の「速鮮チルド」などを備えたモデルが候補になります。
+      </div>
+      <div class="rating-row">
+        <div class="slider-wrap">
+          <input type="range" min="0" max="10" value="5" data-q="q1" />
+        </div>
+        <div class="score-display" id="score-q1">5 / 10</div>
+      </div>
+      <div class="scale-labels">
+        <span>0 重視しない</span>
+        <span>10 とても重視</span>
+      </div>
+    </section>
+
+    <!-- Q2 -->
+    <section class="question-card">
+      <div class="q-header">
+        <div class="q-number">Q2</div>
+        <div class="q-title">冷凍機能の充実</div>
+      </div>
+      <div class="q-body">
+        冷凍食品や作り置きをたくさん保存するための<strong>大容量冷凍室</strong>や、熱いお弁当をすぐ冷ませる「急冷」、凍ったままサクッと切れる「微凍結・瞬冷凍」機能を重視しますか？
+      </div>
+      <div class="q-hint">
+        💡 高得点の場合：三菱の「切れちゃう瞬冷凍」、シャープの大容量「メガフリーザー」、パナソニックの「クーリングアシスト」搭載モデルがおすすめです。
+      </div>
+      <div class="rating-row">
+        <div class="slider-wrap">
+          <input type="range" min="0" max="10" value="5" data-q="q2" />
+        </div>
+        <div class="score-display" id="score-q2">5 / 10</div>
+      </div>
+      <div class="scale-labels">
+        <span>0 重視しない</span>
+        <span>10 とても重視</span>
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section class="question-card">
+      <div class="q-header">
+        <div class="q-number">Q3</div>
+        <div class="q-title">野菜の鮮度保持と使いやすさ</div>
+      </div>
+      <div class="q-body">
+        野菜をたっぷり買い込むことが多く、<strong>ラップなしでもみずみずしさを長期間キープできる機能</strong>や、重い野菜を出し入れしやすい「真ん中野菜室」を重視しますか？
+      </div>
+      <div class="q-hint">
+        💡 高得点の場合：野菜室の鮮度保持や使い勝手に定評のある東芝「VEGETA」が有力候補になります。
+      </div>
+      <div class="rating-row">
+        <div class="slider-wrap">
+          <input type="range" min="0" max="10" value="5" data-q="q3" />
+        </div>
+        <div class="score-display" id="score-q3">5 / 10</div>
+      </div>
+      <div class="scale-labels">
+        <span>0 重視しない</span>
+        <span>10 とても重視</span>
+      </div>
+    </section>
+
+    <!-- Q4 -->
+    <section class="question-card">
+      <div class="q-header">
+        <div class="q-number">Q4</div>
+        <div class="q-title">収納のしやすさ・使い勝手</div>
+      </div>
+      <div class="q-body">
+        奥の食材まで見渡せる<strong>「フルオープン引き出し」</strong>や、鍋や背の高いボトルに合わせてワンタッチで高さを変えられるドアポケットなど、日々の出し入れのストレスのなさを重視しますか？
+      </div>
+      <div class="q-hint">
+        💡 高得点の場合：100%全開になるパナソニックの「ワンダフルオープン」や、東芝の「フリードアポケット」が便利です。
+      </div>
+      <div class="rating-row">
+        <div class="slider-wrap">
+          <input type="range" min="0" max="10" value="5" data-q="q4" />
+        </div>
+        <div class="score-display" id="score-q4">5 / 10</div>
+      </div>
+      <div class="scale-labels">
+        <span>0 重視しない</span>
+        <span>10 とても重視</span>
+      </div>
+    </section>
+
+    <!-- Q5 -->
+    <section class="question-card">
+      <div class="q-header">
+        <div class="q-number">Q5</div>
+        <div class="q-title">スマート機能・清潔機能</div>
+      </div>
+      <div class="q-body">
+        外出先からスマホで庫内を確認できる<strong>AIカメラ機能</strong>や、庫内の浮遊菌を抑えて清潔に保つ<strong>除菌・脱臭機能</strong>（プラズマクラスターなど）に魅力を感じますか？
+      </div>
+      <div class="q-hint">
+        💡 高得点の場合：庫内カメラを搭載した日立やパナソニック、プラズマクラスター搭載のシャープがおすすめです。
+      </div>
+      <div class="rating-row">
+        <div class="slider-wrap">
+          <input type="range" min="0" max="10" value="5" data-q="q5" />
+        </div>
+        <div class="score-display" id="score-q5">5 / 10</div>
+      </div>
+      <div class="scale-labels">
+        <span>0 重視しない</span>
+        <span>10 とても重視</span>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="submit-btn" type="button">📋 結果をまとめる</button>
+      <button id="reset-btn" type="button" class="secondary">リセット</button>
+    </div>
+  </main>
+
+  <section class="result" id="result">
+    <h2>✨ 回答結果</h2>
+    <p>下のテキストを <strong>コピーしてLINEなどで送って</strong>ください。</p>
+    <div class="result-summary" id="result-text"></div>
+    <div class="actions">
+      <button id="copy-btn" type="button">📎 コピーする</button>
+      <button id="share-btn" type="button" class="secondary">🔗 結果リンクを生成</button>
+      <span class="copy-msg" id="copy-msg">コピーしました！</span>
+    </div>
+  </section>
+
+  <footer>
+    🏠 ご家庭にぴったりの一台が見つかりますように。
+  </footer>
+
+</div>
+
+<script>
+  const QUESTIONS = [
+    { id: "q1", title: "生鮮食品の鮮度保持" },
+    { id: "q2", title: "冷凍機能の充実" },
+    { id: "q3", title: "野菜の鮮度保持と使いやすさ" },
+    { id: "q4", title: "収納のしやすさ・使い勝手" },
+    { id: "q5", title: "スマート機能・清潔機能" },
+  ];
+
+  const sliders = document.querySelectorAll('input[type="range"]');
+
+  function updateSlider(slider) {
+    const q = slider.dataset.q;
+    const v = parseInt(slider.value, 10);
+    document.getElementById("score-" + q).textContent = v + " / 10";
+    slider.style.setProperty("--val", (v * 10) + "%");
+  }
+
+  sliders.forEach((s) => {
+    updateSlider(s);
+    s.addEventListener("input", () => updateSlider(s));
+  });
+
+  // Restore from URL hash if present
+  function loadFromHash() {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    const params = new URLSearchParams(hash);
+    QUESTIONS.forEach((q) => {
+      const v = params.get(q.id);
+      if (v !== null) {
+        const slider = document.querySelector(`input[data-q="${q.id}"]`);
+        if (slider) {
+          slider.value = v;
+          updateSlider(slider);
+        }
+      }
+    });
+  }
+  loadFromHash();
+
+  function getResults() {
+    return QUESTIONS.map((q) => {
+      const slider = document.querySelector(`input[data-q="${q.id}"]`);
+      return {
+        id: q.id,
+        title: q.title,
+        score: parseInt(slider.value, 10),
+      };
+    });
+  }
+
+  function buildSummary(results) {
+    const total = results.reduce((a, b) => a + b.score, 0);
+    const lines = ["🧊 冷蔵庫アンケート 回答"];
+    lines.push("");
+    results.forEach((r, i) => {
+      const bar = "■".repeat(r.score) + "□".repeat(10 - r.score);
+      lines.push(`Q${i + 1} ${r.title}`);
+      lines.push(`  ${bar} ${r.score}/10`);
+    });
+    lines.push("");
+    lines.push(`合計: ${total} / 50`);
+
+    // Top picks
+    const sorted = [...results].sort((a, b) => b.score - a.score);
+    const top = sorted.slice(0, 2).filter((r) => r.score >= 7);
+    if (top.length > 0) {
+      lines.push("");
+      lines.push("⭐ 特に重視するポイント:");
+      top.forEach((r) => lines.push(`  ・${r.title} (${r.score}/10)`));
+    }
+    return lines.join("\n");
+  }
+
+  document.getElementById("submit-btn").addEventListener("click", () => {
+    const results = getResults();
+    const summary = buildSummary(results);
+    document.getElementById("result-text").textContent = summary;
+    const resultEl = document.getElementById("result");
+    resultEl.classList.add("visible");
+    resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.getElementById("reset-btn").addEventListener("click", () => {
+    sliders.forEach((s) => {
+      s.value = 5;
+      updateSlider(s);
+    });
+    document.getElementById("result").classList.remove("visible");
+    history.replaceState(null, "", window.location.pathname);
+  });
+
+  document.getElementById("copy-btn").addEventListener("click", async () => {
+    const text = document.getElementById("result-text").textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      const msg = document.getElementById("copy-msg");
+      msg.classList.add("visible");
+      setTimeout(() => msg.classList.remove("visible"), 2000);
+    } catch (err) {
+      // Fallback
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      alert("コピーしました！");
+    }
+  });
+
+  document.getElementById("share-btn").addEventListener("click", async () => {
+    const results = getResults();
+    const params = new URLSearchParams();
+    results.forEach((r) => params.set(r.id, r.score));
+    const url = window.location.origin + window.location.pathname + "#" + params.toString();
+    try {
+      await navigator.clipboard.writeText(url);
+      alert("結果リンクをコピーしました！\n\n" + url);
+    } catch (err) {
+      prompt("以下のリンクをコピーしてください：", url);
+    }
+  });
+</script>
+</body>
+</html>
