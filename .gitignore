@@ -18,3 +18,11 @@ output/
 !examples/**/*.svg
 !examples/**/*.pdf
 .DS_Store
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+.claude/settings.local.json
